@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+        对象：
+        数组对象
+        时间对象 Date
+        对象对象
+        正则
+        console.log(d.getTime)//时间戳是1970年01月01日00时00分00秒
+        北京时间比正常大八小时
+    */
+    console.log(new Date)//获取用户计算机的  当前本地 时间
+    console.log(typeof new Date())//显示是对象类型的
+    console.log(d.getFullYear())//获取年
+    console.log(d.getMouth()+1)//获取月份，需要加1才能获取到当前准确的月份
+    console.log(d.getdate())//获取日
+    console.log(d.getDay())//获取周几
+    console.log(d.getHours())//获取小时
+    console.log(d.getMinutes())//分钟
+    console.log(d.getSecond())//秒
+
+    /*
+        Math对象
+        console.dir(Math)
+        console.log(Math.floor(1.656))//向下取整
+        console.log(Math.ceil(1.15))//等于2 向上取证
+        console.log(Math.abs(-1))//正负都是1 取绝对值
+        console.log(Math.max(1,10,20))//找最大值
+        使用扩展运算符能实现max包数组
+        console.log(Math.max([1,2,3,10]))  Math.max(...[1,2,3,10]);
+        console.log(Math.min(1,10,20))//取最小值
+        Math.PI 圆周率
+            .cos
+            .sqrt 开方
+            .round(4.55) 四舍五入
+            .pow 曲密 .pow(8,2)等于8*8 64
+            .random 0-1之间的无限不循环小数
+    */
+
+    /*
+        时间的换算
+        let d = new Date();
+        倒计时：未来时间-现在时间=剩下时间
+        用数字的方式去设置时间 注意 月份要在当前基础上-1
+    */
+
+    /*
+        定时器来调用函数
+        只炸一次的 setTimeout（回调函数或者字符串函数，什么时候执行函数（时间 毫秒））返回值是个数字
+
+        setTinmeout(function () {
+            alert(hha)
+        },3000)
+
+        清除定时器
+        claerTimeout（定时器的编号） 必须要知道这个
+
+        let time =以上代码例子
+
+        btn.onclick = function () {
+            claerTimeout(time);
+        }
+
+        连续炸 每到了某个时间就炸次 不断连续的炸
+            setInterval（回调函数/字符串函数，什么时候执行函数）
+            
+
+    */
+    </script>
+</body>
+</html>

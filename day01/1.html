@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width:100px;
+        height:100px;
+        background: lightcoral;
+    }
+    </style>
+</head>
+<body>
+    <div id="box" onclick="alert('珠峰')"></div>
+<script>//相当于style
+document.getElementById('box')//相当于#box 页面（文档）获取元素用id的方式
+console.log(document.getElementById('box'));//在浏览器中打印js的结果
+/*当点击box元素的时候做一件弹出珠峰这个弹框的事情
+function是函数的意思 固定写法*/ 
+document.getElementById('box').onclick=function()//=把这个行为给前面{
+    //alert('珠峰')；这两项可以同时出现，但是alert会阻塞后面的代码
+    //console.log(1+2);
+}
+/*外链 ：
+        需要.js后缀的文件
+        通过script标签里的src=“./js/indext.js”
+        注意：使用外链的script中不能写代码，需要在上方再写一个script*/
+/*js的组成：
+            ECMAscript 标准语法 es6  能够让我们进行数据的操作、处理
+            DOM        文档对象模型 页面
+            BOm        浏览器对象模型*/
+</script>
+</body>
+</html>

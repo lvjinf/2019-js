@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击添加1，当前数组:[]</button>
+    <button id="btn1">回退</button>
+<script>
+//数组对象 array 构造函数
+// 这两个方法是一样的  但是第一种的性能高
+// console.log(['zhu','feng','pei','xun']);
+// console.log(new Array('zhu','feng','pei','xun'));
+// // new Array('a','a','a',) = ['a','a','a'];
+//这种方法可以查看很多方法
+// console.dir([]);
+    // let ary = [];
+    // let num = 0;
+    // btn.onclick = function () {
+    //     num++;
+    //     ary.length = ary.length +1;
+    //     ary[ary.length-1] = num;
+    //     btn.innerText = `点击添加1，当前数组:[${ary}]`;
+        // 或者这样btn.innerText = '点击添加1，当前数组:['+ary+']';
+    
+
+    /*
+        push:一个或多个参数，返回值为新数组的长度
+        ary.push(1); ary.push(1,2,3,4) = [1,2,3,4]
+    */ 
+    let ary = [];
+    let num = 0;
+    btn.onclick = function () {
+        num++;
+        ary.length = ary.length +1;
+        ary[ary.length-1] = num;
+        btn.innerText = `点击添加1，当前数组:[${ary}]`;
+</script>
+</body>
+</html>

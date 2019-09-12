@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input  id= "num1" type="text"/> 
+    <select  id="sel">
+        <option value="1" >+</option>
+        <option value="2" >-</option>
+        <option value="3" >*</option>
+        <option value="4" >/</option>
+        <option value="5" >%</option>
+    </select>
+    <input id="num2" type="text"/> = 
+    <input id="num3" type="text"/> 
+    <input id="btn" type="button" value="计算"/> 
+<script>
+    
+    // let d = document.getElementById('btn');
+    btn.onclick = function () {
+        let a = parseFloat(document.getElementById('num1').value);
+        let b = parseFloat(document.getElementById('num2').value);
+        let c = document.getElementById('num3');
+        let sel = document.getElementById('sel').value;
+        // switch (sel) {
+        //     case "1":
+        //         c.value = a + b;
+        //     break;
+        // }
+            if (sel == "1") {
+                c.value = a + b;
+                
+            }
+    };
+    // btn.onclick = function () {
+    //     let num1 = parseFloat(document.getElementById('num1').value);
+    //     let sel = document.getElementById('sel').value;
+    //     let num2 = parseFloat(document.getElementById('num2').value);
+    //     let num3 = document.getElementById('num3');
+    //    switch(sel){
+    //         case "1":
+    //         num3.value = num1+num2;
+    //         break;
+    //         case "2":
+    //         num3.value = num1-num2;
+    //         break;
+    //         case "3":
+    //         num3.value = num1*num2;
+    //         break;
+    //         case "4":
+    //         if (num2 == 0) {
+    //             alert('除数不能为零');
+    //             return;
+    //         }else {
+    //             num3.value = num1/num2;
+    //         };
+    //         break;
+    //         case "5":
+    //             num3.value = num1%num2;
+    //         break;
+    //    };
+    // };
+
+</script>
+</body>
+</html>

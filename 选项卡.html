@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    ul,ol{
+        list-style: none;
+    }
+    .box{
+        width:800px;
+        height:500px;
+        background: lightcyan;
+        margin:0 auto;
+    }
+    .cars>li{
+        width:33%;
+        height:100px;
+        line-height:100px;
+        background: red;
+        float:left;
+        text-align:center;
+        border:1px solid black;
+    }
+    .box div{
+        width:100%;
+        height:400px;
+        line-height:400px;
+        text-align: center;
+        background: lawngreen;
+        display:none;
+        font-size:30px;
+    }
+    .cars>.active{
+        border-bottom:#fff;
+        background: #fff;
+    }
+    .box .active{
+        display:block;
+    }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <ul class="cars" id="cars">
+            <li class="active">新闻</li>
+            <li>电影</li>
+            <li>篮球</li>
+        </ul>
+
+        <div class="active">卡卡卡</div>
+        <div>嘻嘻嘻</div>
+        <div>呵呵呵</div>
+    </div>
+<script>
+    let box = document.getElementById('box');
+    let lis = document.querySelectorAll('li');// 这个不是集合 没有长度不明白
+    let divs = document.querySelectorAll('#box div');
+    //第一种方法
+    // for (var i=0;i<lis.length;i++){
+    //     lis[i].index = i;
+    //     lis[i].onclick = function (){
+    //         for (var i=0;i<lis.length;i++) {
+    //                 lis[i].className = '';
+    //                 console.log(divs[i])
+    //                 divs[i].className = '';
+    //             }
+    //             this.className = "active";
+    //             divs[this.index].className = 'active';
+    //     }
+    // }
+//第二种方法
+    // function changeTab(n){
+    //     for (var i=0; i<lis.length; i++) {
+    //         lis[i].className = '';
+    //         divs[i].className = '';// 你让所有的元素吧active都删掉
+    //     }
+    // }
+    // for (var i=0; i<lis.length; i++) {
+    //     lis[i].zfindex = i;
+    //     lis[i].onclick = function () {
+    //         console.log(this.zfindex)
+    //         changeTab(this.zfindex);
+    //         lis[this.zfindex].className = 'active';// 执行到这里时你给他加上active的名字
+    //         divs[this.zfindex].className = 'active';
+    //          // 这个是你原来的样子，但是到这个函数里面时
+
+    //     }
+    // }
+//第三种方法
+        
+</script>
+</body>
+</html>

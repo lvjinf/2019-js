@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //函数的存储过程  开辟一个堆内存 把函数体当做字符串存储起来
+        //函数形参是定义的时候写的
+        //函数实参是执行的时候传递的
+        //arguments 实参集合 类数组(元素集合)
+        //return 决定函数的返回值 打断函数的执行
+        //this 函数的执行主体 换句话说就是谁执行的函数
+        //     function () {
+
+        //     };
+        //    var f = function qq() {
+
+        //     };
+        //     var f2 = ()=>{
+        //箭头函数没有this和arguments
+        //     };
+
+        // function f3(...arguments){
+        //     console.log(arguments)
+        // }
+        // f3(1,2,3)
+
+
+        //变量提升
+        // var a = 12;
+        // console.log(a,b)
+        // var a = 12;
+        // var b = 13;
+
+        // console.log(f())//这个f是变量提升阶段确定下来的函数222
+        // var f = function () {
+        //     console.log(111)
+        // }
+        // console.log(f())//是重新赋值过的函数 111
+        // function f() {
+        //     console.log(222)
+        // }
+        // console.log(f())//由于变量提升阶段已经定义了f，所以上边的function f 就不执行了；111
+        /*
+        变量提升：
+            在代码执行之前，js会把代码中的带var和带function提前声明
+            带var是只声明不定义，默认值是undefined
+             var a；声明 a = 12；叫定义
+            带function是声明又定义
+            变量提升只提升等号左边的部分
+            在条件句或者循环句中的 function声明，高版本浏览器是只声明不定义的。
+
+        */
+        // console.log(a)//结果是undefined，对于条件来说是否成立，都会变量提升
+        // if (1>2) {
+        //     var a = 100;
+        //     function f
+        // }
+        // console.log(a)//条件不成立就是undefined
+
+
+        // console.log(a)
+        // console.log(a)
+        // if (1>2) {
+        //     var a = 100;
+        //     function f() {
+        //         console.log(666)
+        //     }
+        // }
+        // console.log(a)
+        // console.log(f)
+
+
+        //  let var const的区别是什么？
+        //   var可以重复声明变量 但是let 和const不可以
+        //   var存在变量提升 let和const没有
+        //   var声明的变量会在window下增加一个对应的属性 let和const不行
+        //  var不识别块级作用域 let和const可以
+
+        //作用域就是一块栈内存
+        //堆内存是用来存储引用数据类型的
+        //栈内存是用来存储值类型的 还有就是用来提供代码运行环境
+
+        /*
+            全局作用域：页面一打开就会形成一个全局作用域，一个页面只有一个全局作用域
+            私有作用域：在函数执行的时候会形成一个私有的作用域
+            块级作用域：指的是判断句、循环句的大括号包起来的部分,只有let和const声明的变量可以识别块级作用域，对于var不存在块级作用域一说
+    
+            全局作用域中声明的变量 我们称为全局变量
+            私有作用域中声明的变量 我们称为私有变量；形参也是私有变量
+    
+            上级作用域：函数执行时形成的那个私有作用域一般都会存在一个上级作用域，私有作用域的上级作用域是谁？跟这个函数在哪里执行没有关系，而跟函数在哪个作用域定义有关系
+            私有作用域中的变量有可能不是私有变量，这时该变量对应的值就需要去上级作用域查找，若仍不是上级作用域的私有变量，则接着向上级查找，直到找到window（全局）的位置，若还是没有就会报错
+    
+            上述查找变量的机制我们称为作用域链
+    
+            函数执行时 先有形参赋值，再有变量提升
+        */
+        // var b = 20;
+        // if (1<2) {
+        //     let b = 10;
+        //     console.log(b)
+        // }
+        // console.log(b)
+
+        // var b = 20;
+        // if (1<2) {
+        //     var b = 10;
+        //     console.log(b)
+        // }
+        // console.log(b)
+
+        // var a = 12;
+        // function f() {
+
+        // }
+        // var n = 13;
+        // function fn (n) {
+        //     console.log(n);
+        //     var n = 14;
+        //     console.log(n);
+        // }
+        // fn(n)
+        // console.log(n);
+
+        // var n = 13;
+        // function fn() {
+        //     n=15;
+        //     console.log(n)
+        // }
+        // fn()
+        // alert(n)
+
+        // var n = 10;
+        // function outer(){
+        //     var n = 15;
+        //     function inner(){
+        //         function center(){
+        //             alert(n);
+        //         }
+        //         center()
+        //     }
+        //     inner()
+        // }
+        // outer()
+
+
+        // var n = 0;
+        // function a(){
+        //     var n = 10;
+        //     function b(){
+        //         n++;
+        //         alert(n)
+        //     }
+        //     b();
+        //     alert(n);
+        // }
+        // a()
+
+        // console.log(num,str)
+        // var num = 18;
+        // var str = 'lily';
+        // function fn2() {
+        //     console.log(str,num);
+        //     num = 19;
+        //     str = 'candy';
+        //     var num = 14;
+        //     console.log(str,num);
+        // }
+        // fn2()
+        // console.log(str,num)
+
+        // var str = '我是MT';
+        // test();
+        // function test() {
+        //     console.log(str);
+        //     var str = '哈哈哈';
+        //     console.log(str)
+
+        // }
+
+        // var a=10,b=20;
+        // var c=d=20;
+        // function test() {
+        //     if('a'in window){
+        //         var a = 1000;
+
+        //     }else{
+        //         var a = 100;
+
+        //     }
+        //     console.log(a)      
+        // }
+        // test()
+        // console.log(a)
+
+
+        var a = 1;
+        function fn() {
+            console.log(a);//un
+            var a = 5;
+            console.log(a);//5
+            a++;
+            var a;
+            fn3();
+            fn2();
+            console.log(a);//1  200
+            function fn2() {
+                console.log(a);//6  20
+                a = 20;
+            }
+        }
+        function fn3() {
+            console.log(a);//20  6
+            a = 200;
+        };
+        fn();
+        console.log(a);//200  1
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:200px;
+    height: 50px;
+    border:1px solid #000;
+}
+.btns_box{
+    display: none;
+}
+#btn{
+    height:50px;
+    float:right;
+}
+#txt{
+    width:150px;
+    float: left;
+    line-height: 50px;
+}
+
+</style>
+</head>
+<body>
+    <div id="box">
+        <div id="txt_box">
+            <div id="txt">好好学习,天天向上</div>
+            <button id="btn">修改</button>
+        </div>
+        <div class="btns_box" id="btns_box">
+            <input  id="txt-set" value=""/>
+            <button id="no">取消</button>
+            <button id="yes">确定</button>
+        </div>
+    </div>
+<script>
+   let box = document.getElementById('box');
+   let txt_box = document.getElementById('txt_box');
+   let txt = document.getElementById('txt');
+   let btn = document.getElementById('btn');
+   let btnsBox = document.getElementById('btns_box');
+   let txtSet = document.getElementById('txt-set');
+   let no = document.getElementById('no');
+   let yes = document.getElementById('yes');
+
+   btn.onclick = function(){
+       console.log(111);
+    txt_box.style.display = 'none';
+    btnsBox.style.display = 'block';
+   }
+   yes.onclick = function(){
+       if(txtSet.value != ''){
+            txt.innerHTML = txtSet.value;
+            btnsBox.style.display = 'none';
+            txt_box.style.display = 'block';
+       }else{
+           alert('请输入文字')
+       }
+   }
+   no.onclick = function(){
+        btnsBox.style.display = 'none';
+        txt_box.style.display = 'block';
+   }
+</script>
+</body>
+</html>

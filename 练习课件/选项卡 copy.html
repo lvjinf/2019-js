@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 400px;
+        }
+
+        #box div {
+            width: 400px;
+            height: 200px;
+            border: 1px solid #000;
+            display: none;
+        }
+
+        #box div.show {
+            display: block;
+        }
+
+        .active {
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <button class="active">按钮一</button>
+        <button>按钮二</button>
+        <button>按钮三</button>
+        <div class="show">内容一</div>
+        <div>内容二</div>
+        <div>内容三</div>
+    </div>
+    <script>
+ /*
+        自定义属性
+        给引用类型添加一个标识，进行一一对应的时候，首先就要想到自定义属性
+        有规律的添加自定义属性，我们叫索引(index)
+         [1,2,3][2]
+    
+            1.给每个按钮添加点击事件函数
+            2.点击的按钮亮，别的按钮不亮
+            3.点第一个按钮就对应第一个div，以此类推
+    
+            大清洗版选项卡
+        */
+        const btns = document.querySelectorAll('#box button');
+        const divs = document.querySelectorAll('#box div');
+        for (var i=0;i<btns.length;i++) {
+            btns[i].index = i;
+            btns[i].onclick = function () {
+                for (var i=0;i<btns.length;i++) {
+                    btns[i].className = '';
+                    divs[i].className = '';
+                }
+                this.className = "active";
+                divs[this.index].className = 'show';
+
+            }
+        }
+    </script>
+</body>
+
+</html>

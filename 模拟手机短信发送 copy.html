@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #bigBox {
+            width: 500px;
+            height: 800px;
+            background: red;
+            margin: 0 auto;
+        }
+
+        #bottom {
+            width: 500px;
+            height: 100px;
+            border: 2px solid black;
+            margin: 0 auto;
+        }
+
+        #bottom #img {
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            float: left;
+        }
+
+        #bottom #text {
+            width: 300px;
+            height: 100px;
+            float: left;
+            box-sizing: border-box;
+        }
+
+        #bottom #btn {
+            width: 100px;
+            height: 100px;
+            float: right;
+
+        }
+        .msgBoxR {
+            width: 60%;
+            /* background: yellow; */
+            float: right;
+        }
+        .msgBoxL {
+            width: 60%;
+            /* background: yellow; */
+            float: left;
+        }
+        .msgBoxR img{
+            float: right;
+        }
+        .msgBoxR span{
+            float: left;
+            display: block;
+        }
+
+        /* #bigBox span {
+            max-width: 196px;
+            padding: 7px 10px 4px 14px;
+            border-radius: 8px;
+            position: relative;
+            font-size: 12px;
+            line-height: 24px;
+            word-break: break-all;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="bigBox"></div>
+    <div id="bottom">
+        <img id="img" src="./day05/lico.png" alt="">
+        <input id="text" type="text" placeholder="请输入" />
+        <button id="btn">发送</button>
+    </div>
+    <script>
+        let bo = true;
+        let res = img.src;
+        img.onclick = function () {
+            if (bo == true) {
+                res = "./day05/lico.png";
+                bo = false;
+            } else {
+                res = "./day05/rico.png";
+                bo = true;
+            }
+            img.src = res;
+        }
+        btn.onclick = function () {
+            if (bo == true) {
+                bigBox.innerHTML += `<div id="right" class="msgBoxR">
+                <img src="./day05/rico.png"/>
+                <span>${text.value}<section>23:00</section></span>
+                </div>`;
+                text.value = "";
+            } else {
+                bigBox.innerHTML += `<div id="left" class="msgBoxL">
+                <img src="./day05/lico.png"/>
+                <span>${text.value}<section>23:00</section></span>
+                </div>`;
+                    text.value = "";
+            }
+        }
+    </script>
+</body>
+
+</html>

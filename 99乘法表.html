@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // for (i = 1; i <= 9; i++){
+    // for (j = 1; j <= i; j++){
+    //         //在页面中输出文字
+    //         document.write(j+'*'+i+'='+i*j);
+    //         document.write(" ");
+    //     }
+    //     document.write("<br/>");//br是换行标签
+    // }
+    // 第一层
+        // ******-
+        // *****--
+        // ****---
+        // ***----
+        // **-----
+        // *------
+    // for(i = 6; i > 0; i--){
+    //     // for(i = 6; i > 0; i--){
+    //     //     document.write("*");
+    //     // }
+    //     for(j = 0; j <i; j++){
+    //         document.write("*");
+    //     }
+    //     for(m = 7; m>i; m--){
+    //         document.write("-");
+    //     }
+    //     document.write("<br>");
+    // }
+    var arr = [10,1,2,3,4,8,7,9];
+    // 第一种
+    for(i=0;i<arr.length;i++){
+        document.write(arr[i]);
+        document.write(' ');
+    }
+    document.write('<br>');
+    // 第二种
+    for( m in arr){
+        document.write(arr[m]);
+        document.write(' ');
+    }
+    document.write('<br>');
+    let obj = {
+        width:'100px',
+        height:'100px',
+        background:'skyblue',
+        border:'1px solid #000'
+    }
+    for( m in obj){
+        document.write(m+ss':'+obj[m]);
+        document.write(' ');
+    }
+    </script>
+</body>
+</html>

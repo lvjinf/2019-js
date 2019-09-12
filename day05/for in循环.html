@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>//for in 枚举对象下的每个属性，（会枚举对象的原型）
+//for in上的变量就是每个属性名
+// let obj = {
+//     name:'lvjinfeng',
+//     age:'21',
+//     job:'qianduan'
+// }
+// for(var attr in obj){
+//     console.log(obj[attr]);//属性会变所以用中括号，attr就是obj这个对象下的每个属性
+// }
+
+
+
+/*对象没有length所以不能用for循环，只能用for in循环
+数组尽量不要用for in*/
+let obj = {
+        width:'100px',
+        height:'100px',
+        background:'skyblue',
+        border:'1px solid #000'
+    }
+    for(var attr in obj){
+        box.style[attr]=obj[attr];
+        box.style.width=obj.width;
+
+    }
+</script>
+</body>
+</html>

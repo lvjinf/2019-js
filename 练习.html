@@ -1,0 +1,132 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="btn"></div>
+    <script>
+       let a = 100;
+       let b = 200;
+       let c = 'red';
+       const btn = document.getElementById('btn');
+           
+            // btn.innerText = '按钮('+(++num)+')';
+            btn.innerHTML = '<div style="width:'+a+'px;height:'+b+'px;background:'+c+'"></div>';
+        
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮(0)</button>
+    <button id="btn2">按钮(0)</button>
+<script>
+        第一种方法
+         let num = 0;
+         let num2 = 0;
+         btn.onclick = function () {
+            btn.innerText = '按钮('+(++num)+')';
+           }
+         btn2.onclick = function () {
+             btn2.innerText = '按钮('+(++num2)+')';
+         }
+        第二种方法  自定义属性
+        btn.num = 0;
+        btn2.num = 0;
+        btn.onclick = fn;
+        btn2.onclick = fn;
+        function fn () {
+            this.innerText = '按钮('+(++this.num)+')';
+            // console.dir(this.num);
+        }
+        
+</script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 400px;
+        }
+
+        #box div {
+            width: 400px;
+            height: 200px;
+            border: 1px solid #000;
+            display: none;
+        }
+
+        #box div.show {
+            display: block;
+        }
+
+        .active {
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <button class="active">按钮一</button>
+        <button>按钮二</button>
+        <button>按钮三</button>
+        <div class="show">内容一</div>
+        <div>内容二</div>
+        <div>内容三</div>
+<script>
+            const btns = document.querySelectorAll('btn');
+            const divs = document.querySelectorAll('#box div');
+    /*
+            1.给每个按钮添加点击事件函数
+            2.让刚才点击的按钮不亮，让当下的按钮亮
+            3.点第一个按钮就对应第一个div，以此类推
+    */
+    //默认刚才的按钮就是第一个所以要先设定一个变量
+    let btn = btns[0];//把第一个按钮存起来
+    for (var i=0,len=btns.length; i<len; i++) {
+        btns[i].index = i; 
+        btns[i].onclick = function () {
+            //如果上一次点击的按钮和现在的按钮是同一个，下面的就不用执行了
+            if (this === btn)return;
+            // if(this === btn)return;
+            btn.className = '';//把刚才的按钮清空
+            // btn.className = '';
+            divs[btn.index].className = '';
+            // divs[btn.index].className = '';
+            btns[this.index].className = 'active';
+            // btns[this.index].className = 'active';
+            divs[this.index].className = 'show';
+            // divs[this.index].className = 'show'; 
+            btn = this;
+            }
+        //再点击结束的时候把当前的按钮赋值给之前的按钮，复用
+        
+        //按钮就从第一个按钮变成了当下的按钮
+    }
+
+</script>
+</body>
+
+</html>

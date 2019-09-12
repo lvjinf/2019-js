@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width:100px;
+        height:100px;
+        background: lightcoral;
+        display:none;
+    }
+    </style>
+</head>
+<body>
+    <button id="bth">显示</button>
+    <div id="box"></div>
+    <script>
+    document.getElementById('bth').onclick=function(){
+        document.getElementById('box').style.display='block';
+        document.getElementById('box').style.height='300px';
+        /*在设置复合样式的时候，把-去掉首字母大写
+       document.getElementById('box').style.fontSize='10px'; */
+       /*变量（可变的量，可以更改存储的值）：
+            把js中的数据存储到一个自定义的名字中，以便于复用声明变量使用
+            var 自定义名字=数据（现在都用let）
+            var box=document.getElementById('box')*/
+        /*常量（不可变的量）
+                const 自定义的名字=数据
+                */
+    }
+   /*当我点击这个元素的时候显示box模块，并且改变他的高度*/
+    </script>
+    <script>
+    /*js的数据类型：
+                    数字、字符串（页面所有的文本都是，在赋值样式的时候也是）、布尔值、空、未定义、对象
+（基本类型：number、string、boolean、null、undefined）（引用类型：object）*/
+    console.log(100);//1.蓝色的阿拉伯数字
+    console.log('字符串');2.//被单引号对或者双引号对包裹的内容都是字符串，在控制台中是灰黑色的，在写文字内容的时候必须要用字符串，不然会报错。
+    console.log('100');//只代表100的字符串不是阿拉伯数字
+    boolean //3.布尔值只有两个值true真的 false假的
+    console.log(true);
+    null//4.空对象 空地址 在前期只要出现null，就要考虑元素是否存在，1.元素存在，但是写错了2.没有写这个元素
+    undefined//5.未定义（有这个东西，但是没有赋值，现在没有，有可能将来会有）
+    object//6.对象 由键值对的形式表示，一堆属性值和另一对属性值用逗号分隔，
+    /*typeof：专门用来运算某个数据是什么类型的，会返回某个数据类型的小写
+                能够检测出string、number、Boolean、undefined、object
+                注意：检测null的时候会是object；能检测函数*/
+
+        //标准key值要加上双引号，不过js本身比较随意的可以不加，但是在真实的开发中后台传输的数据是标准的格式
+
+innerText在元素中输入文本
+innerHTML在元素中添加标签
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function fn(a,b) {
+        let total = 0;
+        total = a + b;
+        return total;//必须写返回值 不写为undefined。
+    }
+    fn(100,200)
+    let res = fn(100,200);
+    console.log(res);
+
+    function fn(a,b) {//只有一个参数 b就显示undefined，解决方法：如果任意一个是undefined就结束下面的代码
+        if (a===undefined || b===undefined) {
+            return 0;
+        }
+        let total = 0;
+        total = a + b;
+        return total;
+    }
+    fn(a)//注意 这里只有一个参数 
+</script>
+</body>
+</html>

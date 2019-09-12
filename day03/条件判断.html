@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 内容不能为空 内容必须是能够转为数字的字符串  除数和取余数都不能为零  保留两位小数 -->
+    <input type="text" id="num1" />
+    <select id="cal">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="num2" />
+    <span>=</span>
+    <input type="text" id="num3" />
+    <input type="button" id="btn" value="计算" />
+    <script>
+        bth.onclick=function(){
+            if(num1 !=='');
+            if(num2 !=='');
+            let count=0;
+            if(!isNaN(parseFloat(num1.value))){}
+            if(!isNaN(parseFloat(num2.value))){}
+            if(cal.value=='+'){
+                num3.value=num1.value*1+num2.value*1;
+            }else if (cal.value=='-'){
+                num3.value=num1.value-num2.value;
+            }else if (cal.value=='*'){
+                num3.value=num1.value*num2.value;
+            }else if (cal.value=='/'){
+                num3.value=num1.value/num2.value;
+                if(num2.value==0){
+                    alert("除数不能为0");
+                }
+            }else if (cal.value=='%'){
+                num3.value=num1.value%num2.value;
+                if(num2.value==0){
+                    alert("取余不能为0");
+                }
+            }
+
+        }
+        
+    </script>
+</body>
+</html>

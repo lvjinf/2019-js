@@ -1,0 +1,113 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:400px;
+}
+#box div{
+    width:400px;
+    height:200px;
+    border:1px solid #000;
+    display:none;
+}
+#box div.show{
+    display:block;
+}
+.active{
+    background: yellow;
+}
+
+
+</style>
+</head>
+<body>
+    <div id="box">
+        <button class="active">按钮一</button>
+        <button>按钮二</button>
+        <button>按钮三</button>
+        <div class="show">内容一</div>
+        <div>内容二</div>
+        <div>内容三</div>
+    </div>
+<script>
+    const btns = document.querySelectorAll('button');
+    const divs = document.querySelectorAll('#box div');
+    for (var i=0; i<btns.length; i++) {
+        btn = btns[0];
+        btns[i].index = i;
+        btns[i].onclick = function () {
+            btn.className = '';
+            divs[btn.index].className = '';
+            
+            divs[this.index].className = "show";
+            this.className = "active";
+            btn = this;
+        }
+    };
+
+
+
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" id="txt"/><button id="btn">添加</button>
+        <ul id="ul">
+            <!-- <li>1</li> -->
+        </ul>
+    
+<script>
+   let ary = [];
+    btn.onclick = function(){
+        // ary.push(txt.value);
+        ary.unshift(txt.value);
+        render();
+    }   
+
+    function render(){
+        let html = '';
+        for(let i=0;i<ary.length;i++){
+            html += `<li>${ary[i]}</li>`;
+        }
+        ul.innerHTML = html;
+        txt.value = '';
+    }
+
+
+    // console.log(Array)
+    // console.log(['珠','峰']);
+    // console.log(new Array('珠','峰'))
+    // 把字符串变成数组的方法
+    // new Array('朱','峰')
+    // console.dir([])
+    // var ary = [0,1];
+
+    // let ary = [1];
+    // console.log(ary)
+   
+// 12456
+// (ary.unshift(-1,0));直接添加数字，返回的是新数组的长度
+//  (ary.shift());不写参数就是直接删除数组中第一个数据，返回的是新数组
+//         let ary = [2];
+// console.log(ary.push(4,5,6,1) );
+//     console.log(ary);
+ 
+
+
+
+
+</script>
+</body>
+</html>
